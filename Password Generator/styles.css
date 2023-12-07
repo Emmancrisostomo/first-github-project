@@ -44,6 +44,10 @@ body{
     box-shadow: 6px 6px 2px 1px #1e2123;
     border-radius: 15px;
     margin-right: 1rem;
+    color: #333541;
+}
+.display input:focus {
+    outline: 3px solid #4696FF;
 }
 .btn-copy{
     height: 100%;
@@ -84,15 +88,15 @@ body{
     margin: 0.5rem;
 }
 button[type='submit']{
+    border: 3px solid #4696FF;
     width: 100%;
     margin: 1rem 0 0.5rem;
     padding: 1rem;
     font-size: 1rem;
-    background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #64a2f4 0%, #4696FF 100%);
-    color: #fff;
-    border: none;
+    color: #3285f1;
     box-shadow: 4px 3px 2px 1px #1e2123;
     border-radius: 15px;
+    background-color: #333541;
 }
 input[type="number"]{
     padding: 0.5rem;
@@ -117,7 +121,8 @@ input[type="range"]{
 }
 button[type='submit']:hover{
     background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #046ef8 0%, #82b2ef 100%);
-    box-shadow: 0px 0px 5px 1px #5fb8f3;
+    color: #fff;
+    border: none;
 }
 .btn-copy:hover{
     background-color: #4696FF;
@@ -125,6 +130,7 @@ button[type='submit']:hover{
 .btn-copy:hover img{
     transform: scale(0.8);
 }
+
 @media (max-width:600px){
     .container{
         width: 60vh;
@@ -133,3 +139,4 @@ button[type='submit']:hover{
         width: 40vh;
     }
 }
+
