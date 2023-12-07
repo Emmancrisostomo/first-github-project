@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
-    
     <title>Password Generator</title>
 </head>
 <body>
    <div class="container">
     <h1 class="title">PASSWORD GENERATOR</h1>
-    <div class="Display">
-    <input class="passdisplay" id="passDisplay" readonly>password</input>
-    <button><img src="/cpyicon.png" onclick="copy()"></button>
+    <div class="display">
+    <input class="passdisplay" id="passDisplay" readonly></input>
+    <button class="btn-copy">
+        <img src="./cpyicon.png" onclick="copy()">
+    </button> 
     </div>
     
 
     <form class="form" id="passGen">
-        <label for="char">Number of Characters</label>
-    <div class="char-container">
-        <input type="range" min="1" max="50" value="10" id="charRange">
-        <input class="num-input" type="number" min="1" max="50" value="10" id="charNumber">
-    </div>
-
+        <div class="form-between-number">
+            <label for="char">Number of Characters</label>
+            <div class="char-container">
+                <input type="range" min="1" max="50" value="10" id="charRange">
+                <input class="num-input" type="number" min="1" max="50" value="10" id="charNumber">
+            </div>
+        </div>
+        
+    <div class="form-between">
         <label for="">Include Uppercase</label>
         <input type="checkbox" name="" id="includeUppercase">
-
+    </div>
+    <div class="form-between">
         <label for="">Include Numbers</label>
         <input type="checkbox" name="" id="includeNumbers">
-
+    </div>
+    <div class="form-between">
         <label for="">Include Symbols</label>
         <input type="checkbox" name="" id="includeSymbols">
-        
-
+    </div>      
         <button type="submit" class="btn">Generate Password</button>
-
     </form>
    </div> 
 </body>
