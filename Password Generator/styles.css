@@ -147,15 +147,6 @@ button[type='submit']:hover{
     margin-right: 1rem;
 }
 
-@media (max-width:600px){
-    .container{
-        width: 60vh;
-    }
-    .display input{
-        width: 40vh;
-    }
-}
-
 .popup .overlay{
     position: fixed;
     top: 0px;
@@ -249,4 +240,15 @@ button[type='submit']:hover{
     background-color: #fff; /* Set the background color of the thumb on hover */
   }
  
-  
+  @media (max-width:600px){
+    .container{
+        width: 60vh;
+    }
+    .display input{
+        width: 40vh;
+    }
+    .popup .content{
+        width: 400px;
+        margin: 0 auto;
+    }
+}
