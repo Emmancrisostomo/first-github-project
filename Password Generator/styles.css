@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #3285f1 0%, #4696FF 8%, rgba(189,252,253,1) 99%);
+}
+
+.display, 
+.container, 
+.form{
+    padding: 1rem;
+}
+.border-dashed{
+    border: 3px dashed #c16363;
+}
+.container{
+    background-color: #333541;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: -0px 0px 10px 1px #1e2d3b;
+    /* box-shadow: -0px 0px 20px 1px #235988; */
+}
+.display{
+    display: flex;
+    justify-content: space-between;
+}
+.display input{
+    width: 70vh;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 6px 6px 2px 1px #1e2123;
+    border-radius: 15px;
+    margin-right: 1rem;
+    color: #333541;
+}
+.display input:focus {
+    outline: 3px solid #4696FF;
+}
+.btn-copy{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    box-shadow: 3px 3px 2px 1px #1e2123;
+    border-radius: 100px;
+    border: 3px solid #4696FF;
+    border-radius: 50px;
+}
+.display img{
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.form-between-number{
+    width: 100%;
+    margin: 0.5rem;
+}
+.char-container{
+    display: flex;
+    justify-content: space-between;
+}
+.form-between{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0.5rem;
+}
+button[type='submit']{
+    border: 3px solid #4696FF;
+    width: 100%;
+    margin: 1rem 0 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #3285f1;
+    box-shadow: 4px 3px 2px 1px #1e2123;
+    border-radius: 15px;
+    background-color: #333541;
+}
+input[type="number"]{
+    padding: 0.5rem;
+    background: transparent;
+    color: #fff;
+    box-shadow: 3px 3px 2px 1px #1e2123;
+    border: none;
+    border: 3px solid #4696FF;
+    border-radius: 50px;
+}
+input[type="checkbox"]{
+    box-shadow: 3px 3px 2px 1px #1e2123;
+    border: 3px solid #4696FF;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border-radius: 100%;
+}
+input[type="range"]{
+    width: 45vh;
+    color: #046ef8;
+}
+button[type='submit']:hover{
+    background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #046ef8 0%, #82b2ef 100%);
+    color: #fff;
+    border: none;
+}
+.btn-copy:hover{
+    background-color: #4696FF;
+}
+.btn-copy:hover img{
+    transform: scale(0.8);
+}
+
+@media (max-width:600px){
+    .container{
+        width: 60vh;
+    }
+    .display input{
+        width: 40vh;
+    }
+}
+
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background:rgba(0,0,0,0.7) ;
+    z-index: 1;
+    display: none;
+}
+
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0);
+    background: #1e2d3b;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+   
+ }
+
+ .popup .close-btn{
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30x;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+ }
+
+ .popup.active .overlay{
+
+    display: block;
+
+ }
+
+ .popup.active .content{
+
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%)scale(1);
+ }
+
+ .btn-history{
+    border: 3px solid #4696FF;
+    width: 100%;
+    margin: 1rem 0 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #3285f1;
+    box-shadow: 4px 3px 2px 1px #1e2123;
+    border-radius: 15px;
+    background-color: #333541;
+}
+ .btn-history:hover{
+    background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #046ef8 0%, #82b2ef 100%);
+    color: #fff;
+    border: none;
+}

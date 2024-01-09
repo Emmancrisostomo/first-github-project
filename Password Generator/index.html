@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Password Generator</title>
+</head>
+<body>
+   <div class="container">
+    <h1 class="title">PASSWORD GENERATOR</h1>
+    <div class="display">
+    <input class="passdisplay" id="passDisplay" readonly></input>
+    <button class="btn-copy">
+        <img src="./cpyicon.png" onclick="copy()">
+    </button> 
+    </div>
+    
+
+    <form class="form" id="passGen">
+        <div class="form-between-number">
+            <label for="char">Number of Characters</label>
+            <div class="char-container">
+                <input type="range" min="4" max="20" value="10" id="charRange">
+                <input class="num-input" type="number" min="1" max="50" value="10" id="charNumber">
+            </div>
+        </div>
+        
+    <div class="form-between">
+        <label for="">Include Uppercase</label>
+        <input type="checkbox" name="" id="includeUppercase" checked>
+    </div>
+    <div class="form-between">
+        <label for="">Include Lowercase</label>
+        <input type="checkbox" name="" id="includeLowecase" checked>
+    </div>
+    <div class="form-between">
+        <label for="">Include Numbers</label>
+        <input type="checkbox" name="" id="includeNumbers"checked>
+    </div>
+    <div class="form-between">
+        <label for="">Include Symbols</label>
+        <input type="checkbox" name="" id="includeSymbols" checked>
+    </div> 
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+        <div class="close-btn" onclick="popup()">&times;</div>
+        <h1>History</h1>
+        <p>Lorem Ipsum</p>
+        <ul id="textArea"></ul>
+    </div>
+    </div>
+        <button type="reset" onclick="popup()" class="btn-history">View History</button>
+         <button type="submit" class="btn">Generate Password</button>
+    </form>
+   </div> 
+</body>
+</html>
