@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Password Generator</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
             <label for="char">Number of Characters</label>
             <div class="char-container">
                 <input type="range" min="4" max="20" value="10" id="charRange">
-                <input class="num-input" type="number" min="1" max="50" value="10" id="charNumber">
+                <input class="num-input" type="number" min="1" max="20" value="10" id="charNumber">
             </div>
         </div>
         
@@ -33,7 +34,7 @@
     </div>
     <div class="form-between">
         <label for="">Include Lowercase</label>
-        <input type="checkbox" name="" id="includeLowecase" checked>
+        <input type="checkbox" name="" id="includeLowercase" checked>
     </div>
     <div class="form-between">
         <label for="">Include Numbers</label>
@@ -49,11 +50,10 @@
         <div class="content">
         <div class="close-btn" onclick="popup()">&times;</div>
         <h1>History</h1>
-        <p>Lorem Ipsum</p>
         <ul id="textArea"></ul>
     </div>
     </div>
-        <button type="reset" onclick="popup()" class="btn-history">View History</button>
+        <button type="reset" onclick="displayHistory()" class="btn-history">View History</button>
          <button type="submit" class="btn">Generate Password</button>
     </form>
    </div> 
