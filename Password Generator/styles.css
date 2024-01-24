@@ -10,6 +10,7 @@ body{
     align-items: center;
     margin: 0;
     height: 100vh;
+    /* background-color: #333541; */
     background: linear-gradient(280deg, rgba(2,0,36,1) 0%, #3285f1 0%, #4696FF 8%, rgba(189,252,253,1) 99%);
 }
 
@@ -31,13 +32,17 @@ body{
     border-radius: 25px;
     box-shadow: -0px 0px 10px 1px #1e2d3b;
     /* box-shadow: -0px 0px 20px 1px #235988; */
+    width: 70vh;
+}
+.title{
+    text-align: center;
 }
 .display{
     display: flex;
     justify-content: space-between;
 }
 .display input{
-    width: 70vh;
+    width: 50vh;
     padding: 1rem;
     font-size: 1.3rem;
     border: none;
@@ -116,7 +121,7 @@ input[type="checkbox"]{
     border-radius: 100%;
 }
 input[type="range"]{
-    width: 45vh;
+    width: 40vh;
     color: #046ef8;
 }
 button[type='submit']:hover{
@@ -126,9 +131,16 @@ button[type='submit']:hover{
 }
 .btn-copy:hover{
     background-color: #4696FF;
+    transform: translateY(-3px);
+}
+.btn-copy:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
 }
 .btn-copy:hover img{
     transform: scale(0.8);
+}
+.btn-copy:active{
+    transform: translateY(1px);
 }
 .popup{
     display: flex;
@@ -179,8 +191,8 @@ button[type='submit']:hover{
     top: 20px;
     width: 30x;
     height: 30px;
-    color: #222;
-    /* color: #fff; */
+    /* color: #222; */
+    color: #fff;
     font-size: 30px;
     font-weight: 600;
     line-height: 30px;
@@ -241,14 +253,32 @@ button[type='submit']:hover{
   }
  
   @media (max-width:600px){
+    body{
+        background: #333541;
+        margin: auto;
+    }
     .container{
-        width: 60vh;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        margin: auto 0;
     }
     .display input{
-        width: 40vh;
+        /* width: 35vh; */
+        width: 45vh;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+    .btn-copy{
+        margin-left: 0.5rem;
     }
     .popup .content{
-        width: 400px;
+        width: 300px;
         margin: 0 auto;
+    }
+}
+@media (max-width:500px){
+    .display input{
+        width: 35vh;
     }
 }
