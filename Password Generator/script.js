@@ -11,7 +11,7 @@ const passwordHistory = [];
 
 //random selection of characters via ASCII
 const lowercase_char_codes = arrayLowToHigh(97, 122);
-const random_char_codes = arrayLowToHigh(65, 122);
+const random_char_codes = arrayLowToHigh(33, 57);
 const uppercase_char_codes = arrayLowToHigh(65, 90);
 const number_char_codes = arrayLowToHigh(48, 57);
 const symbol_char_codes = arrayLowToHigh(33, 47)
@@ -58,7 +58,7 @@ function displayHistory() {
     const parsedHistory = JSON.parse(storedHistory);
     parsedHistory.forEach((password, index) => {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `<i class='bx bx-clipboard' ></i>${password}`;
+      listItem.innerHTML = `<i class='bx bx-clipboard' onclick="copy()"></i>${password}`;
       historyList.appendChild(listItem);
 
       // Add a scrollbar when list item count reaches 5
@@ -85,7 +85,7 @@ function generatePassword(
   includeSymbols,
   includeLowercase
 ) {
-  let charCodes = lowercase_char_codes;
+  let charCodes = random_char_codes;
   if (includeUppercase) charCodes = charCodes.concat(uppercase_char_codes);
   if (includeNumbers) charCodes = charCodes.concat(number_char_codes);
   if (includeSymbols) charCodes = charCodes.concat(symbol_char_codes);
