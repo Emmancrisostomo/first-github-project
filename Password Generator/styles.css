@@ -151,6 +151,7 @@ button[type='submit']:hover{
 .btn-copy:active{
     transform: translateY(1px);
 }
+
 .popup{
     display: flex;
     justify-content: center;
@@ -239,6 +240,15 @@ button[type='submit']:hover{
 .close-btn:hover{
     color: #fff;
 }
+.content li i:hover{
+    transform: translateY(-3px);
+}
+.content li i:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
+}
+.content li i:active{
+    transform: translateY(1px);
+}
 /* Style for the scrollbar track */
 ::-webkit-scrollbar {
     width: 10px; /* Set the width of the scrollbar */
@@ -280,7 +290,7 @@ button[type='submit']:hover{
     }
     .display input{
         /* width: 35vh; */
-        width: 45vh;
+        /* width: 45vh; */
         margin: 0 auto;
         font-size: 1.1rem;
     }
@@ -292,8 +302,8 @@ button[type='submit']:hover{
         margin: 0 auto;
     }
 }
-@media (max-width:500px){
+/* @media (max-width:500px){
     .display input{
         width: 35vh;
     }
-}
+} */

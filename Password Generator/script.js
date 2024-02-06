@@ -58,7 +58,7 @@ function displayHistory() {
     const parsedHistory = JSON.parse(storedHistory);
     parsedHistory.forEach((password, index) => {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `<i class='bx bx-clipboard' onclick="copy()"></i>${password}`;
+      listItem.innerHTML = `<i class='bx bx-clipboard' onclick="historyCopy('${password}')"></i>${password}`;
       historyList.appendChild(listItem);
 
       // Add a scrollbar when list item count reaches 5
@@ -144,17 +144,37 @@ function syncCharAmount(e) {
   charRange.value = value;
 }
 
-//Copy button
-function copy() {
-  passDisplay.select();
-  document.execCommand('copy');
+function displayCopy() {
+  let val = passDisplay.value;
+  copyToClipboard(val);
+}
+function historyCopy(password) {
+  let val = password;
+  copyToClipboard(val);
 }
 
-// function storage() {
-//   for (let i = 0; i < localStorage.length; i++) {
-//     const generatedPass = localStorage.password(i);
-//   }
-// }
+function copyToClipboard(val) {
+  if (val.trim() === '') {
+    swal({
+      title: 'Error!',
+      text: 'Cannot copy empty text',
+      icon: 'error',
+    });
+    return;
+  }
+  navigator.clipboard
+    .writeText(val)
+    .then(() => {
+      swal({
+        title: 'Success!',
+        text: 'Text copied to clipboard',
+        icon: 'success',
+      });
+    })
+    .catch((error) => {
+      console.error('Failed to copy:', error);
+    });
+}
 
 function popup() {
   document.getElementById('popup-1').classList.toggle('active');

@@ -6,15 +6,16 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Password Generator</title>
 </head>
 <body>
    <div class="container">
     <h1 class="title">PASSWORD GENERATOR</h1>
-    <div class="display">
+    <div class="display" onclick="displayCopy()">
     <input class="passdisplay" id="passDisplay" readonly></input>
     <button class="btn-copy">
-        <img src="./cpyicon.png" onclick="copy()">
+        <img src="./cpyicon.png">
     </button> 
     </div>
     
@@ -48,10 +49,10 @@
     <div class="popup" id="popup-1">
         <div class="overlay"></div>
         <div class="content">
-        <div class="close-btn" onclick="popup()">&times;</div>
-        <h1>History</h1>
-        <ul id="textArea"></ul>
-    </div>
+            <div class="close-btn" onclick="popup()">&times;</div>
+            <h1>History</h1>
+            <ul id="textArea"></ul>
+        </div>
     </div>
         <button type="reset" onclick="displayHistory()" class="btn-history">View History</button>
          <button type="submit" class="btn">Generate Password</button>
