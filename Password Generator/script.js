@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const charNumbers = charNumber.value;
   const includeUppercase = includeUppercaseElement.checked;
-  const includeLowercase = includeUppercaseElement.checked;
+  const includeLowercase = includeLowercaseElement.checked;
   const includeNumbers = includeNumbersElement.checked;
   const includeSymbols = includeSymbolsElement.checked;
   const password = generatePassword(
@@ -85,19 +85,47 @@ function generatePassword(
   includeSymbols,
   includeLowercase
 ) {
-  let charCodes = random_char_codes;
+  let charCodes = [];
+
+  // Populate character codes based on checkbox states
   if (includeUppercase) charCodes = charCodes.concat(uppercase_char_codes);
   if (includeNumbers) charCodes = charCodes.concat(number_char_codes);
   if (includeSymbols) charCodes = charCodes.concat(symbol_char_codes);
   if (includeLowercase) charCodes = charCodes.concat(lowercase_char_codes);
 
+  if (charCodes.length === 0) {
+    // If no character set is selected, return an empty string
+    return '';
+  }
+
   const passChar = [];
 
-  for (let i = 0; i < charNumbers; i++) {
+  // Ensure each character set is represented at least once
+  if (includeUppercase)
+    passChar.push(String.fromCharCode(getRandomElement(uppercase_char_codes)));
+  if (includeNumbers)
+    passChar.push(String.fromCharCode(getRandomElement(number_char_codes)));
+  if (includeSymbols)
+    passChar.push(String.fromCharCode(getRandomElement(symbol_char_codes)));
+  if (includeLowercase)
+    passChar.push(String.fromCharCode(getRandomElement(lowercase_char_codes)));
+
+  // Generate additional characters to fill the remaining length
+  const remainingLength = charNumbers - passChar.length;
+  for (let i = 0; i < remainingLength; i++) {
     const tempChar = charCodes[Math.floor(Math.random() * charCodes.length)];
     passChar.push(String.fromCharCode(tempChar));
   }
+
+  // Shuffle the password characters
+  passChar.sort(() => Math.random() - 0.5);
+
   return passChar.join('');
+}
+
+// Function to get a random element from an array
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 //Function to select characters via ASCII
