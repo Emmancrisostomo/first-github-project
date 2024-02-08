@@ -31,6 +31,23 @@ form.addEventListener('submit', (e) => {
   const includeLowercase = includeLowercaseElement.checked;
   const includeNumbers = includeNumbersElement.checked;
   const includeSymbols = includeSymbolsElement.checked;
+
+  // Check if no checkboxes are selected
+  if (
+    !includeUppercase &&
+    !includeLowercase &&
+    !includeNumbers &&
+    !includeSymbols
+  ) {
+    // Display alert
+    swal({
+      title: 'Error!',
+      text: 'Please select at least one checkbox',
+      icon: 'error',
+    });
+    return; // Exit the function, preventing further execution
+  }
+
   const password = generatePassword(
     charNumbers,
     includeUppercase,
